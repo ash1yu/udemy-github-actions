@@ -5,8 +5,8 @@ on:
     branches:
       - main
   
-  jobs:
-    build:
-      runns-on: ubuntu-latest
-      steps:
-        - run: echo hello world
+jobs:
+  build:
+    runns-on: ubuntu-latest
+    steps:
+      - run: echo hello world

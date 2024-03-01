@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-defalut:
+default:
   run:
     working-directory: backend
   

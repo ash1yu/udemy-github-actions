@@ -1,6 +1,6 @@
-name: backend
+name: backend # workflow name
 
-on:
+on: # trigger setting
   push:
     branches:
       - main
@@ -10,13 +10,24 @@ defaults:
     working-directory: backend
   
 jobs:
-  build:
+  build: # one job -> build
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    steps: # several steps
+      - uses: actions/checkout@v3 # useful action from github actions
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - run: npm ci
+      - run: npm ci # execute command
       - run: npm run test
       - run: npm run build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: backend/coverage/**
+          retention-days: 5
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: backend/idst/index.js
+          retention-days: 5

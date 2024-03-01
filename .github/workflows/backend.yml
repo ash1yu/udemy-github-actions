@@ -29,5 +29,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: dist
-          path: backend/idst/index.js
+          path: backend/dist/index.js
           retention-days: 5
